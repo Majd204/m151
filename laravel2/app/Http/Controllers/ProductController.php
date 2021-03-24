@@ -12,7 +12,10 @@ class ProductController extends Controller
         return view('products', ['products' => $products]);
     }
 
+    
     public function detail($id) {
-        dd($id);
+        $product = \App\Models\Product::all()->where("id", "=",$id)->first();
+    
+        return view('product', ['product' => $product]);
     }
 }
