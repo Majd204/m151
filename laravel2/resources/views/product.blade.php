@@ -1,18 +1,17 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Preis</th>
-        <th>Detailss</th>
-    </tr>
-    @foreach ($product as $producte)
-        <tr>
-            <td>{{ $producte->name }}</td>
-            <td>{{ $producte->price }}</td>
-        </tr>
-    @endforeach
-</table>
+<p>{{ $product->name }}</p>
+<p>{{ $product->price }}</p>
+<p>{{ $product->details }}</p>
+<p>{{ $product->text }}</p>
+<p>{{ $product->images }}</p> 
 </body>
 </html>
+
