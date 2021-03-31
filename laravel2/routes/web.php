@@ -19,11 +19,16 @@ Route::get('/products', [\App\Http\Controllers\ProductController::class, 'list']
 
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'detail']);
 
-Route::get('/login', [\App\Http\Controllers\UserController::class, 'login']);
+Route::view('/login', 'login');
 
-Route::get('/register',[\App\Http\Controllers\UserController::class, 'register']);
+Route::view('/register', 'register');
 
-Route::post('/store',[\App\Http\Controllers\UserController::class, 'store']);
+Route::post('/store', [\App\Http\Controllers\UserController::class, 'store']);
 
-Route::post('/logs', 'UserController@logs');
+Route::post('/logs', [\App\Http\Controllers\UserController::class, 'logs']);
 
+Route::view('/cart', 'cart');
+
+Route::get('/addtocart/{id}', [\App\Http\Controllers\OrderController::class, 'addtocart']);
+
+Route::get('/ordering', [\App\Http\Controllers\OrderController::class, 'ordering']);

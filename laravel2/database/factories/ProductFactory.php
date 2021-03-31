@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Product;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ProductFactory extends Factory
 {
@@ -22,7 +23,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Produkt ' . Str::random(5),
+            'price' => rand(100, 1000) / 10,
+            'text' => Str::words(50),
+            'details' => Str::words(50),
+            'images' => 'image.jpg'
         ];
     }
 }

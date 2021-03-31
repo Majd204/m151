@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
 <p>{{ $product->price }}</p>
 <p>{{ $product->details }}</p>
 <p>{{ $product->text }}</p>
-<p>{{ $product->images }}</p> 
+<img style="max-width: 100px;" src="{{ $product->image }}" alt="">
 </body>
 </html>
 

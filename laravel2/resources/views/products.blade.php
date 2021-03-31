@@ -8,17 +8,22 @@
     <title>Alle Produkte</title>
 </head>
 <table>
-    <tr>
+<body>
+    
         <th>Name</th>
         <th>Preis</th>
         <th>Details</th>
+        <th><a href="{{ url('/cart') }}">Warenkorb</a></th>
+        
     </tr>
     @foreach ($products as $product)
         <tr>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->price }}</td>
+            <td>{{ $product->price }} CHF</td>
             <td><a href="/product/{{ $product->id }}">Link</a></td>
-        </tr>
+            <td><a href="/addtocart/{{$product->id}}">addtocart</a></td>
+        </tr>  
+        
     @endforeach
 </table>
 </body>
