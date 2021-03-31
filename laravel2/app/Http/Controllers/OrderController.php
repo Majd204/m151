@@ -37,7 +37,9 @@ class OrderController extends Controller
     }
     public function oderering(){
 
-        session()->put();
+        $cart = session()->get('');
+
+        session()->put('');
     }
 }
 

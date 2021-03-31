@@ -1,5 +1,5 @@
 
-    <table id="cart">
+    <table>
         <head>
         <tr>
             <th>Product</th>
@@ -11,6 +11,7 @@
         </head>
         <body>
         <?php $total = 0 ?>
+        @if(session('cart'))
             @foreach(session('cart') as $id => $details)
                 <?php $total += $details['price'] * $details['quantity'] ?>
                 <tr>
@@ -22,15 +23,20 @@
                 <td>{{ $details['price'] }}CHF</td>
                  <td>{{ $details['quantity'] }} </td>
                <td>{{ $details['price'] * $details['quantity'] }}CHF</td>
-
                 </tr>
             @endforeach
+        @endif 
         </body>
         <tr>
-            <td><strong>Total {{ $total }}</strong></td>
+            <td>
+            <div>
+            <h4>Total {{ $total }}</h4>
+            </div>
+            </td>
 
             <td><a href="{{ url('/products') }}"> Continue Shopping</a></td> 
-
-               <td><a href="{{URL::to('/ordering') }}">order</a></td>         
+            <form action="{{URL::to('/ordering') }}" method="Get">
+               <td><a action="{{URL::to('/ordering') }}"  href="">order</a></td>   
+            </form>      
         </tr>
     </table>
